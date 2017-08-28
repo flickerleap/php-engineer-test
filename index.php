@@ -9,6 +9,11 @@ require __DIR__ . '/vendor/autoload.php';
 
 use FlickerLeap\Diamond;
 use FlickerLeap\Rectangle;
+use FlickerLeap\Square;
+
+$square = new Square(10);
+$rectangle = new Rectangle(10);
+$diamond = new Diamond(10);
 
 ?>
 <!DOCTYPE html>
@@ -27,28 +32,27 @@ use FlickerLeap\Rectangle;
 
         <p>At the end of this test, you should have all the answers on this page.</p>
 
-        <h2>Output a square</h2>
+        <h2>Output a <?php $square->displayName(); ?></h2>
 
-        <?php
-            // implement the square class here
-        ?>
+        <?php $square->draw(); ?>
 
-        <h2>Output a diamond</h2>
+        <h2>Output a <?php $diamond->displayName(); ?></h2>
 
-        <?php
-            // output your diamond here
-        ?>
+        <?php $diamond->draw(); ?>
 
-        <h2>Output your rectangle</h2>
+        <h2>Output your <?php $rectangle->displayName(); ?></h2>
 
-        <?php
-            // output your working rectangle here
-        ?>
+        <?php $rectangle->draw(); ?>
 
         <h2>Output the result of the API</h2>
 
         <?php
-            // Use the Httpful client to output the API results here.
+        // Use the Httpful client to output the API results here.
+        $pokemon = \Httpful\Request::get("http://pokeapi.co/api/v2/pokemon/mewtwo/")->send();
+
+        echo "<p><strong>Pokemon name:</strong> {$pokemon->body->name}</p>";
+        echo "<p><strong>Pokemon Experience:</strong> {$pokemon->body->base_experience}</p>";
+        echo "<p><strong>Pokemon type:</strong> {$pokemon->body->types[0]->type->name}</p>";
         ?>
 
         <h2>Recommendations</h2>

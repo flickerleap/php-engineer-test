@@ -1,14 +1,14 @@
 <?php
 /*
- * The Shape Class
+ * The Rectangle Class
  */
 
 namespace FlickerLeap;
 
-use FlickerLeap\Shape;
-
 /**
+ * Class Rectangle
  *
+ * @package FlickerLeap
  */
 class Rectangle extends Shape
 {
@@ -16,11 +16,12 @@ class Rectangle extends Shape
      *
      * @param int $length
      */
-    public function __construct($length = 5) {
-        $this->name = 'Rectangle';
-        $this->sides = 4;
+    public function __construct($length = 5)
+    {
+        $this->name       = 'Rectangle';
+        $this->sides      = 4;
         $this->sideLength = $length;
-        $this->pixel = "*";
+        $this->pixel      = "*";
     }
 
     /**
@@ -29,7 +30,6 @@ class Rectangle extends Shape
     public function displayName()
     {
         echo $this->name;
-
     }
 
     /**
@@ -37,19 +37,18 @@ class Rectangle extends Shape
      */
     public function draw()
     {
-        for ($i = 0; $i < $this->sideLength; $i++)
-        {
-            for ($j = 0; $j < $this->sideLength; $j++) {
+        for ($i = 0; $i < $this->sideLength; $i++) {
+            for ($j = 0; $j < $this->sideLength * 2; $j++) {
                 if ($i == 0
                     || $j == 0
                     || $i == $this->sideLength - 1
                     || $j == $this->sideLength * 2 - 1) {
-                    echo $this->pixel; // TODO: Fix alignment at some point
+                    echo $this->pixel . $this->padding(2);
                 } else {
                     echo $this->padding(4);
                 }
             }
-             $this->newLine();
+            $this->newLine();
         }
     }
 }

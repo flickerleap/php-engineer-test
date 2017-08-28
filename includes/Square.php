@@ -1,14 +1,14 @@
 <?php
 /*
- * The Shape Class
+ * The Square Class
  */
 
 namespace FlickerLeap;
 
-use FlickerLeap\Shape;
-
 /**
+ * Class Square
  *
+ * @package FlickerLeap
  */
 class Square extends Shape
 {
@@ -18,14 +18,14 @@ class Square extends Shape
      */
     public function __construct($length = 5)
     {
-        $this->name = 'Square';
-        $this->sides = 4;
+        $this->name       = 'Square';
+        $this->sides      = 4;
         $this->sideLength = $length;
-        $this->pixel = "*";
+        $this->pixel      = "*";
     }
 
     /**
-     *
+     * Echos name of the shape.
      */
     public function displayName()
     {
@@ -48,7 +48,7 @@ class Square extends Shape
                     echo $this->padding(4);
                 }
             }
-             $this->newLine();
+            $this->newLine();
         }
     }
 }
