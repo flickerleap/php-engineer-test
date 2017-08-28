@@ -6,7 +6,7 @@
 namespace FlickerLeap;
 
 /**
- * Class Daimond
+ * Class Diamond
  *
  * @package FlickerLeap
  */
@@ -38,8 +38,8 @@ class Diamond extends Shape
      */
     public function draw()
     {
+        // Loop for top half of diamond.
         $space = $this->sideLength;
-
         for ($i = 1; $i <= $this->sideLength; $i++) {
             for ($j = 1; $j <= $space; $j++) {
                 echo $this->padding(2);
@@ -54,8 +54,8 @@ class Diamond extends Shape
             $this->newLine();
         }
 
+        // Loop for bottom half of diamond.
         $space = 2;
-
         for ($i = 1; $i <= $this->sideLength; $i++) {
 
             for ($j = 1; $j <= $space; $j++) {

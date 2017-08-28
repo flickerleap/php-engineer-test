@@ -12,8 +12,8 @@ use FlickerLeap\Rectangle;
 use FlickerLeap\Square;
 
 $square = new Square(10);
-$rectangle = new Rectangle();
-$diamond = new Diamond();
+$rectangle = new Rectangle(10);
+$diamond = new Diamond(10);
 
 ?>
 <!DOCTYPE html>
@@ -42,14 +42,17 @@ $diamond = new Diamond();
 
         <h2>Output your <?php $rectangle->displayName(); ?></h2>
 
-        <?php
-            $rectangle->draw();
-        ?>
+        <?php $rectangle->draw(); ?>
 
         <h2>Output the result of the API</h2>
 
         <?php
-            // Use the Httpful client to output the API results here.
+        // Use the Httpful client to output the API results here.
+        $pokemon = \Httpful\Request::get("http://pokeapi.co/api/v2/pokemon/mewtwo/")->send();
+
+        echo "<p><strong>Pokemon name:</strong> {$pokemon->body->name}</p>";
+        echo "<p><strong>Pokemon Experience:</strong> {$pokemon->body->base_experience}</p>";
+        echo "<p><strong>Pokemon type:</strong> {$pokemon->body->types[0]->type->name}</p>";
         ?>
 
         <h2>Recommendations</h2>

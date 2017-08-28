@@ -30,7 +30,6 @@ class Rectangle extends Shape
     public function displayName()
     {
         echo $this->name;
-
     }
 
     /**
