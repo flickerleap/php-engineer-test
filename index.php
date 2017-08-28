@@ -9,6 +9,11 @@ require __DIR__ . '/vendor/autoload.php';
 
 use FlickerLeap\Diamond;
 use FlickerLeap\Rectangle;
+use FlickerLeap\Square;
+
+$square = new Square(10);
+$rectangle = new Rectangle();
+$diamond = new Diamond();
 
 ?>
 <!DOCTYPE html>
@@ -27,22 +32,18 @@ use FlickerLeap\Rectangle;
 
         <p>At the end of this test, you should have all the answers on this page.</p>
 
-        <h2>Output a square</h2>
+        <h2>Output a <?php $square->displayName(); ?></h2>
+
+        <?php $square->draw(); ?>
+
+        <h2>Output a <?php $diamond->displayName(); ?></h2>
+
+        <?php $diamond->draw(); ?>
+
+        <h2>Output your <?php $rectangle->displayName(); ?></h2>
 
         <?php
-            // implement the square class here
-        ?>
-
-        <h2>Output a diamond</h2>
-
-        <?php
-            // output your diamond here
-        ?>
-
-        <h2>Output your rectangle</h2>
-
-        <?php
-            // output your working rectangle here
+            $rectangle->draw();
         ?>
 
         <h2>Output the result of the API</h2>
