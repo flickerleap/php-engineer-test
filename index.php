@@ -33,7 +33,11 @@ use Httpful\Request;
 
         <?php
             // implement the square class here
+
+            //instantiate square class
             $draw = new Square(10);
+
+            // call draw method
             $draw->draw();
         ?>
 
@@ -41,7 +45,11 @@ use Httpful\Request;
 
         <?php
             // output your diamond here
+
+            //instantiate diamond class
             $draw = new Diamond(5);
+
+            // call draw method
             $draw->draw();
         ?>
 
@@ -49,7 +57,11 @@ use Httpful\Request;
 
         <?php
             // output your working rectangle here
+
+            //instantiate rectangle class
             $draw = new Rectangle(5);
+
+            // call draw method
             $draw->draw();
         ?>
 
@@ -57,21 +69,27 @@ use Httpful\Request;
 
         <?php
             // Use the Httpful client to output the API results here.
+
+            // add url to variable
             $url = "https://pokeapi.co/api/v2/pokemon/mewtwo/";
+
+            // make https get call to rul
             $response = Request::get($url) ->expectsJson()->send();
 
+            // store results in variable
             $result = $response->body;
+
+            //set to loop 3 items and echo  with labels
             for ($i=0; $i < 3; $i++) {
               echo "<p><b>Move name:</b> ".$result->moves[$i]->move->name."</p>";
             }
-                // print_r($response->body);
-            // echo "{$response->body->name} joined GitHub on " .
-            //             date('M jS', strtotime($response->body->created_at)) ."\n";
         ?>
 
         <h2>Recommendations</h2>
 
-        <p><!-- Let us know how we can improve this test here --></p>
+        <p>I would love to see a question that requires us to manipulate arrays. I've found that the practical application of them <br />
+          in any given real situation where item association is requiredm a firm understanding not just arrays but multidimensional ones as well as
+          <br/>creating meaningful keys could be the bridge between completing a task and running in circles the whole time.</p>
 
     </body>
 </html>
