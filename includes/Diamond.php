@@ -27,7 +27,6 @@ class Diamond extends Shape
     public function displayName()
     {
         echo $this->name;
-
     }
 
     /**
