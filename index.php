@@ -10,6 +10,7 @@ require __DIR__ . '/vendor/autoload.php';
 use FlickerLeap\Diamond;
 use FlickerLeap\Rectangle;
 use FlickerLeap\Square;
+use Httpful\Request;
 
 ?>
 <!DOCTYPE html>
@@ -56,6 +57,16 @@ use FlickerLeap\Square;
 
         <?php
             // Use the Httpful client to output the API results here.
+            $url = "https://pokeapi.co/api/v2/pokemon/mewtwo/";
+            $response = Request::get($url) ->expectsJson()->send();
+
+            $result = $response->body;
+            for ($i=0; $i < 3; $i++) {
+              echo "<p><b>Move name:</b> ".$result->moves[$i]->move->name."</p>";
+            }
+                // print_r($response->body);
+            // echo "{$response->body->name} joined GitHub on " .
+            //             date('M jS', strtotime($response->body->created_at)) ."\n";
         ?>
 
         <h2>Recommendations</h2>
