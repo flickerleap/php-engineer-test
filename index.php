@@ -9,6 +9,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use FlickerLeap\Diamond;
 use FlickerLeap\Rectangle;
+use FlickerLeap\Square;
 
 ?>
 <!DOCTYPE html>
@@ -30,7 +31,9 @@ use FlickerLeap\Rectangle;
         <h2>Output a square</h2>
 
         <?php
-            // implement the square class here
+            $newSquare = new Square();
+            echo $newSquare->name . nl2br("\n");
+            $newSquare->draw();
         ?>
 
         <h2>Output a diamond</h2>
@@ -42,12 +45,17 @@ use FlickerLeap\Rectangle;
         <h2>Output your rectangle</h2>
 
         <?php
-            // output your working rectangle here
+            $newRectangle = new Rectangle();
+            echo $newRectangle->name . nl2br("\n");
+            $newRectangle->draw();
         ?>
 
         <h2>Output the result of the API</h2>
 
         <?php
+            $newDiamond = new Diamond();
+            echo $newDiamond->name . nl2br("\n");
+            $newDiamond->draw();
             // Use the Httpful client to output the API results here.
         ?>
 

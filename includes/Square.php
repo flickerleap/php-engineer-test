@@ -8,7 +8,7 @@ namespace FlickerLeap;
 use FlickerLeap\Shape;
 
 /**
- *
+ * Square shape implementation
  */
 class Square extends Shape
 {
@@ -16,7 +16,7 @@ class Square extends Shape
      *
      * @param int $length
      */
-    public function __construct($length = 5)
+    public function __construct($length = 10)
     {
         $this->name = 'Square';
         $this->sides = 4;
