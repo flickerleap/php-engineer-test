@@ -83,7 +83,7 @@ use FlickerLeap\Square;
 
         <h2>Recommendations</h2>
 
-        <p><!-- Let us know how we can improve this test here --></p>
+        <p>I really enjoyed the test and so far , I do not have any recommendations</p>
 
     </body>
 </html>
