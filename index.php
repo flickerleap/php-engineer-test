@@ -49,7 +49,9 @@ use FlickerLeap\Square;
         <h2>Output your rectangle</h2>
 
         <?php
-            // output your working rectangle here
+             // output your working rectangle here
+                $testObject = new Rectangle();
+                $testObject->draw();
         ?>
 
         <h2>Output the result of the API</h2>
