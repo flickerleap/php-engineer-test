@@ -61,9 +61,24 @@ use FlickerLeap\Square;
           // Use the Httpful client to output the API results here.
             $response = file_get_contents('http://pokeapi.co/api/v2/pokemon/mewtwo/');
             $response = json_decode($response);
-            echo "<pre>";
-            echo print_r($response);
-            echo "</pre>";
+            // echo "<pre>";
+            // echo print_r($response);
+            // echo "</pre>";
+           
+            
+            foreach($response as $i => $item) {
+                $total = count((array)$response);
+            //     for ($total = 0; $total <= 2; $total++) {
+            //     echo "The Name is: $i <br>";
+            //   }
+
+                echo "<pre>";
+                echo print_r("Name: ".$i);
+                echo "</pre>";
+                
+            }
+            
+
         ?>
 
         <h2>Recommendations</h2>
