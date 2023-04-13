@@ -43,10 +43,10 @@ class Rectangle extends Shape
                 if ($i == 0
                     || $j == 0
                     || $i == $this->sideLength - 1
-                    || $j == $this->sideLength * 2 - 1) {
-                    echo $this->pixel; // TODO: Fix alignment at some point
+                    || $j == $this->sideLength - 1) {
+                    echo $this->pixel. $this->padding(8);
                 } else {
-                    echo $this->padding(4);
+                    echo $this->padding(10);
                 }
             }
              $this->newLine();
