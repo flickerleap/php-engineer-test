@@ -9,6 +9,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use FlickerLeap\Diamond;
 use FlickerLeap\Rectangle;
+use FlickerLeap\Square;
 
 ?>
 <!DOCTYPE html>
@@ -31,6 +32,8 @@ use FlickerLeap\Rectangle;
 
         <?php
             // implement the square class here
+            $testObject = new Square();
+            $testObject->draw();
         ?>
 
         <h2>Output a diamond</h2>
