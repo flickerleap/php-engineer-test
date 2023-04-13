@@ -59,19 +59,11 @@ use FlickerLeap\Square;
         <?php
            
           // Use the Httpful client to output the API results here.
-            // $response = file_get_contents('http://pokeapi.co/api/v2/pokemon/mewtwo/');
-            // $response = json_decode($response);
-            // $response = new SimpleXMLElement($response);
-            
-            require_once("includes/curl_helper.php");
-            $action = "GET";
-            $url = "http://pokeapi.co/api/v2/pokemon/mewtwo/";
-            echo "Trying to reach ...";
-            echo $url;
-            // $parameters = array("param" => "value");
-            // $result = CurlHelper::perform_http_request($action, $url, $parameters);
-            $result = CurlHelper::perform_http_request($action, $url);
-            echo print_r($result)
+            $response = file_get_contents('http://pokeapi.co/api/v2/pokemon/mewtwo/');
+            $response = json_decode($response);
+            echo "<pre>";
+            echo print_r($response);
+            echo "</pre>";
         ?>
 
         <h2>Recommendations</h2>
