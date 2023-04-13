@@ -39,7 +39,11 @@ use FlickerLeap\Square;
         <h2>Output a diamond</h2>
 
         <?php
+           echo "<pre>";
             // output your diamond here
+            $testObject = new Diamond();
+            $testObject->draw();
+            echo "</pre>";
         ?>
 
         <h2>Output your rectangle</h2>
